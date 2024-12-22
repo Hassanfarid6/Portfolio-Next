@@ -1,6 +1,6 @@
 "use client";
 import React,{useTransition, useState} from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
@@ -52,6 +52,9 @@ const About = () => {
     const [isPending, startTransition] = useTransition()
 
     const handleTabChange = (id) => {
+        isPending(() => {
+            setTab(id)
+        })
         startTransition(() => {
             setTab(id)
         })
