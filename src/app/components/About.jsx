@@ -49,7 +49,9 @@ const About = () => {
     ]
 
     const [tab, setTab] =useState("skills")
-    const [isPending, startTransition] = useTransition()
+    const [
+        // isPending
+        , startTransition] = useTransition()
 
     const handleTabChange = (id) => {
         // isPending
@@ -60,6 +62,9 @@ const About = () => {
 
     return(
             <section className="text-white">
+                    {/* <div className="mt-8">
+                       {isPending ? <p>Loading...</p> : activeTabContent}
+                     </div> */}
                 <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16">
                     <Image src="/about-image.png" alt="about-image" width={500} height={500} />
                    <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
@@ -83,7 +88,6 @@ const About = () => {
                     <div className="mt-8">
                         {Tab_Data.find((t) => t.id === tab).content}
                     </div>
-
                    </div>
                 </div>
 
