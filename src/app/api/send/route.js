@@ -13,12 +13,12 @@ export async function POST(req) {
       },
     });
 
-    // 2. Email content
     const mailOptions = {
-      from: process.env.email_user,
-      to: email,
+      from: `"Portfolio Contact" <${email}>`,
+      to: process.env.email_user,
+      replyTo: email,
       subject: subject,
-      text: message,
+      text: `New message from: ${email}\n\n${message}`,
     };
 
     // 3. Send the email
