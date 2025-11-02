@@ -17,7 +17,7 @@ export async function POST(req) {
       from: `"Portfolio Contact" <${email}>`,
       to: process.env.email_user,
       replyTo: email,
-      subject: subject,
+      subject: `📩 Message from (${email}) — ${subject}`,
       text: `New message from: ${email}\n\n${message}`,
     };
 
